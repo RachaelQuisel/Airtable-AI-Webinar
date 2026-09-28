@@ -1,0 +1,4 @@
+interface:
+  display_name: "Base Check"
+  short_description: "Check Airtable data and automation evidence"
+  default_prompt: "Use $airtable-base-check to assess whether this workflow has reliable data and automation evidence."

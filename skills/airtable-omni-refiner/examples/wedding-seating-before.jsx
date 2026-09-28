@@ -1,13 +1,13 @@
 // examples/wedding-seating-before.jsx
 //
-// This is a realistic output from Airtable Omni when prompted with:
+// Illustrative flawed fixture, not evidence of an actual Omni generation:
 // "Create a custom interface for my wedding seating plan — 10 round tables
 // of 8 seats, show guest photo and name on each occupied seat, VIP badge
 // for VIPs, empty seats in gray."
 //
-// Notable gaps — all typical of Omni output, all covered by the refiner:
+// Selected gaps in this fixture:
 //   1. No <Suspense> boundary
-//   2. useRecords has no `fields` option — loads everything
+//   2. Data-panel exposure/filtering must be checked; useRecords(table) is correct
 //   3. Field names (strings) instead of field IDs
 //   4. getTableByName instead of getTableByIdIfExists
 //   5. No null handling on getCellValue

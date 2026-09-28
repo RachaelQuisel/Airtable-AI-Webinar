@@ -4,7 +4,7 @@ Resources from Rachael Quisel's webinar, **Building an AI-assisted workflow with
 
 I build three versions of a paraprofessional task dashboard, then use Claude to refine the custom interface code. The focus is building fun into the product and shipping something you've put your own creative stamp on.
 
-## The four resources
+## Webinar resources
 
 | Resource | What it does |
 | --- | --- |
@@ -12,6 +12,21 @@ I build three versions of a paraprofessional task dashboard, then use Claude to 
 | [Original Questwood Omni prompt](prompts/questwood-original-omni-prompt.txt) | The text prompt that built the first custom Questwood interface. |
 | [Omni Prompt Generator](skills/omni-prompt/) (`omni-prompt`) | Turns rough ideas into specific prompts for Omni. |
 | [Airtable Omni Custom Interface Refiner](skills/airtable-omni-refiner/) (`airtable-omni-refiner`) | Helps fix bugs, improve usability, and add interactions to Omni-generated interface code. |
+
+## Consulting playbook: six skills
+
+The [consulting skill index](skills/README.md) explains the sequence and how to use the complete folders.
+
+| Skill | Role |
+| --- | --- |
+| [Workflow Scout](skills/airtable-workflow-scout/SKILL.md) | Understand the workflow, identify work to remove, and select an interface. |
+| [Base Check](skills/airtable-base-check/SKILL.md) | Audit the schema, data quality, and automation evidence needed for the chosen workflow. |
+| [Momentum Studio](skills/airtable-momentum-studio/SKILL.md) | Design an interactive individual task experience and write its Omni build prompt. |
+| [Capacity Studio](skills/airtable-capacity-studio/SKILL.md) | Design team workload and assignment interactions and write their Omni build prompt. |
+| [Omni Refiner](skills/airtable-omni-refiner/SKILL.md) | Improve actual generated source and guide its return to Airtable. |
+| [Experience Lab](skills/airtable-experience-lab/SKILL.md) | Review or test the interface and compare observed behavior across versions. |
+
+For the three-version demo, use **Workflow Scout → native baseline → Momentum Studio → custom build → Omni Refiner → Experience Lab**. Capacity Studio covers team workload; Base Check supports relevant data/schema questions. The presenter can perform every prompt and source handoff manually.
 
 ## Speaker notes and videos
 
@@ -43,6 +58,6 @@ AI-generated output still needs review and testing in your own base. Check the i
 
 ## Credits
 
-The Airtable Omni Custom Interface Refiner is adapted from [Noam Say / Airmakers' airtable-omni-refiner](https://github.com/noamsay/airtable-omni-refiner). Its original README, attribution, examples, and reference files are included. The upstream README identifies the skill as MIT licensed.
+The Airtable Omni Custom Interface Refiner is adapted from [Noam Say / Airmakers' airtable-omni-refiner](https://github.com/noamsay/airtable-omni-refiner). Its original README is preserved as `skills/airtable-omni-refiner/UPSTREAM-README.md`; the adapted skill includes updated examples and reference files. The upstream README identifies the skill as MIT licensed.
 
-The Omni Prompt Generator, Questwood prompt, refined Questwood source, and webinar notes are shared here by Rachael Quisel. The upstream skill's license statement applies to that skill; it is not a repository-wide license declaration.
+Workflow Scout, Base Check, Momentum Studio, Capacity Studio, Experience Lab, the Omni Prompt Generator, Questwood prompt, refined Questwood source, and webinar notes are shared here by Rachael Quisel. The upstream skill's license statement applies to that skill; it is not a repository-wide license declaration.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Experience Lab"
+  short_description: "Review and test Airtable interface behavior"
+  default_prompt: "Use $airtable-experience-lab to review this interface against the user task and report evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omni Refiner"
+  short_description: "Refine Omni source and guide its return"
+  default_prompt: "Use $airtable-omni-refiner to improve this Omni-generated source and prepare a separate V3 copy."

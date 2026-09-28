@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workflow Scout"
+  short_description: "Map workflows and choose useful interfaces"
+  default_prompt: "Use $airtable-workflow-scout to understand this Airtable workflow and recommend the most useful interface."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Momentum Studio"
+  short_description: "Design an engaging individual task interface"
+  default_prompt: "Use $airtable-momentum-studio to design a custom task interface and write a prompt for Omni."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capacity Studio"
+  short_description: "Design interactive team workload views"
+  default_prompt: "Use $airtable-capacity-studio to design a workload interface and write a prompt for Omni."
