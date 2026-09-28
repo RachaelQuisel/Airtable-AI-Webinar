@@ -1,0 +1,4 @@
+interface:
+  display_name: "Voice Align"
+  short_description: "Rewrite content in concise, plain English"
+  default_prompt: "Use $voice-align to rewrite this in concise, plain English."

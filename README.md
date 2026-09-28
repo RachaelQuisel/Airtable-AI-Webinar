@@ -26,6 +26,8 @@ The [consulting skill index](skills/README.md) explains the sequence and how to 
 | [Omni Refiner](skills/airtable-omni-refiner/SKILL.md) | Improve actual generated source and guide its return to Airtable. |
 | [Experience Lab](skills/airtable-experience-lab/SKILL.md) | Review or test the interface and compare observed behavior across versions. |
 
+[Voice Align](skills/voice-align/SKILL.md) is a companion writing skill for clear narration and documentation. The public copy omits its private delivery integration.
+
 For the three-version demo, use **Workflow Scout → native baseline → Momentum Studio → custom build → Omni Refiner → Experience Lab**. Capacity Studio covers team workload; Base Check supports relevant data/schema questions. The presenter can perform every prompt and source handoff manually.
 
 ## Speaker notes and videos

@@ -11,6 +11,10 @@ Six skills for moving from workflow discovery to an interactive Airtable interfa
 | [Omni Refiner](airtable-omni-refiner/SKILL.md) | Improve actual generated source and guide its return to Airtable. |
 | [Experience Lab](airtable-experience-lab/SKILL.md) | Review or test the interface and compare observed behavior across versions. |
 
+## Companion writing skill
+
+[Voice Align](voice-align/SKILL.md) helps turn a technical explanation or recording script into concise, plain English. This public copy includes the writing guidance. The local private installation has a client-specific delivery hook, which is intentionally excluded from this public repository.
+
 ## Use them together
 
 For the three-version demo: **Workflow Scout → native-page prompt → Momentum Studio → custom Omni build → Omni Refiner → Experience Lab**. Use Capacity Studio instead of Momentum Studio for a team workload or assignment experience. Use Base Check when a relevant schema or data question needs investigation.
