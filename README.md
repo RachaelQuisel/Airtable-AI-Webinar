@@ -2,41 +2,43 @@
 
 Resources from Rachael Quisel's webinar, **Building an AI-assisted workflow with Omni in Airtable**.
 
-I build three versions of a paraprofessional task dashboard, then use Claude to refine the custom interface code. The focus is building fun into the product and shipping something you've put your own creative stamp on.
-
-## Webinar resources
-
-| Resource | What it does |
-| --- | --- |
-| [Questwood source code](questwood/questwood-refined.tsx) | The refined custom task dashboard with XP, levels, a leaderboard, garden rewards, and task controls. |
-| [Original Questwood Omni prompt](prompts/questwood-original-omni-prompt.txt) | The text prompt that built the first custom Questwood interface. |
-| [Omni Prompt Generator](skills/omni-prompt/) (`omni-prompt`) | Turns rough ideas into specific prompts for Omni. |
-| [Airtable Omni Custom Interface Refiner](skills/airtable-omni-refiner/) (`airtable-omni-refiner`) | Helps fix bugs, improve usability, and add interactions to Omni-generated interface code. |
+I take one real job — a paraprofessional tracking case tasks for the families on their caseload —
+and follow it through four versions of the same interface. A native Airtable page, then Omni's
+first React custom element, then two passes where Claude edits that React source. The focus is
+building fun into the product and shipping something you've put your own creative stamp on.
 
 ## Consulting playbook: six skills
 
 The [consulting skill index](skills/README.md) explains the sequence and how to use the complete folders.
 
-| Skill | Role |
+| Skill | Job |
 | --- | --- |
-| [Workflow Scout](skills/airtable-workflow-scout/SKILL.md) | Understand the workflow, identify work to remove, and select an interface. |
-| [Base Check](skills/airtable-base-check/SKILL.md) | Audit the schema, data quality, and automation evidence needed for the chosen workflow. |
-| [Momentum Studio](skills/airtable-momentum-studio/SKILL.md) | Design an interactive individual task experience and write its Omni build prompt. |
-| [Capacity Studio](skills/airtable-capacity-studio/SKILL.md) | Design team workload and assignment interactions and write their Omni build prompt. |
-| [Omni Refiner](skills/airtable-omni-refiner/SKILL.md) | Improve actual generated source and guide its return to Airtable. |
-| [Experience Lab](skills/airtable-experience-lab/SKILL.md) | Review or test the interface and compare observed behavior across versions. |
+| [Workflow Scout](skills/airtable-workflow-scout/SKILL.md) | Understand the work and recommend up to three interfaces. |
+| [Momentum Studio](skills/airtable-momentum-studio/SKILL.md) | Design an individual's interactive workflow and write the Omni prompt. |
+| [Capacity Studio](skills/airtable-capacity-studio/SKILL.md) | Design team workload and assignment experiences. |
+| [Omni Refiner](skills/airtable-omni-refiner/SKILL.md) | Edit exported custom-interface source. This is the adapted existing specialist. |
+| [Experience Lab](skills/airtable-experience-lab/SKILL.md) | Test whether an interface helps someone complete the job. |
+| [Base Check](skills/airtable-base-check/SKILL.md) | Check the data and schema when a build depends on them. |
 
-[Voice Align](skills/voice-align/SKILL.md) is a companion writing skill for clear narration and documentation. The public copy omits its private delivery integration.
+[Voice Align](skills/voice-align/SKILL.md) is a companion writing skill for clear narration and
+documentation. The public copy omits its private delivery integration. The earlier
+[Omni Prompt Generator](skills/omni-prompt/SKILL.md) is still here as a separate prompting aid;
+the two Studios now cover that job with more design structure.
 
-For the three-version demo, use **Workflow Scout → native baseline → Momentum Studio → custom build → Omni Refiner → Experience Lab**. Capacity Studio covers team workload; Base Check supports relevant data/schema questions. The presenter can perform every prompt and source handoff manually.
+For this demo the sequence is **Workflow Scout → native baseline → Momentum Studio → custom build
+→ Omni Refiner**. Capacity Studio covers team workload; Base Check supports data and schema
+questions; Experience Lab checks whether the result actually works. These are instructions for the
+same assistant, not independent agents. Every prompt and source handoff is performed manually.
 
-## Speaker notes and videos
+## The demo
 
-- [Download the speaker outline PDF](docs/airtable-webinar-speaker-outline.pdf)
-- [Read the editable speaker outline](docs/speaker-outline.md)
-- [Watch the six demo videos, in order](videos/README.md)
-
-The PDF includes the 15-step outline, the full original Questwood prompt, and clickable links to the resources and videos. The videos are rough recordings hosted on Loom. Video files are not stored in this repository.
+| Resource | What it is |
+| --- | --- |
+| [Family Neighborhood V3 source](family-neighborhood/family-neighborhood-v3.tsx) | The shipped React custom interface: one house per family, a car on the road, tasks, documents, training progress, badges, and a "How this works" guide. |
+| [Family Neighborhood setup notes](family-neighborhood/README.md) | Which tables to connect and the 48 demo field IDs you have to remap first. Read this before reusing the source. |
+| [The five demo prompts](prompts/family-neighborhood-demo-prompts.md) | Every prompt behind the four versions, in order, copy-ready. |
+| [Recording script](docs/recording-script.md) | The full walkthrough with narration and the checks to run after each version. |
+| [Demo video](videos/README.md) | The recording of all four versions. |
 
 ## Use these in your own setup
 
@@ -46,20 +48,45 @@ Download the repository with GitHub's **Code → Download ZIP** button, or clone
 git clone https://github.com/RachaelQuisel/Airtable-AI-Webinar.git
 ```
 
-You'll likely need to tweak the skills for your LLM and system. Keep each skill's supporting reference and example files with its `SKILL.md`. Adapt the installation path and invocation syntax to the assistant you're using.
+Keep each skill folder intact, references, examples, and agent metadata included, and use the
+skill-import process your assistant supports. You'll likely need to tweak the skills for your LLM
+and system. Each skill ships an `agents/openai.yaml`, which is the Codex wiring — ignore it if
+you're not using Codex. Loading a skill does not grant Airtable access; configure that separately.
 
-The prompt uses the demo base ID and its field names. Change that configuration for your own base before asking Omni to build.
-
-The code is an Airtable custom interface source file, not a standalone web app. It needs Airtable's Interface Extensions runtime and the configured tables and fields. See [Questwood setup notes](questwood/README.md) before using it.
+The prompts use the demo base ID and its field names, and the V3 source resolves 48 fields by
+literal demo field ID. Change that configuration for your own base before asking Omni to build or
+pasting the source into an element. `getFieldIfExists` returns `undefined` instead of throwing, so
+an unmapped base renders blank values rather than an obvious error.
 
 ## Build and review
 
-Use the original prompt to create a custom interface with Omni. Use the refiner skill with the generated source code, review the output, and iterate with your feedback. The source file here is the refined v2.0 snapshot dated September 23, 2026; it is separate from the original build prompt.
+Run Workflow Scout on your base and pick a recommendation. Let a Studio write the Omni prompt and
+paste it into Omni yourself. When Omni has built the custom element, download its source from the
+element menu, give that source to Omni Refiner with the change you want, and paste the returned
+code back through **Edit source code**. Save, render, and check it before calling it done.
 
-AI-generated output still needs review and testing in your own base. Check the installed Airtable SDK before applying code patterns from a skill. For example, the bundled Interface Extension uses `useRecords(table)` and configures its data through Airtable's Data panel. Base Extension examples may use a different signature.
+AI-generated output still needs review and testing in your own base. Check the installed Airtable
+SDK before applying code patterns from a skill. The bundled Interface Extension source uses
+`useRecords(table)` and configures its data through Airtable's Data panel; Base Extension examples
+may use a different signature. Generated prompts, local source edits, changes applied to Airtable,
+and verified results are different states.
 
 ## Credits
 
-The Airtable Omni Custom Interface Refiner is adapted from [Noam Say / Airmakers' airtable-omni-refiner](https://github.com/noamsay/airtable-omni-refiner). Its original README is preserved as `skills/airtable-omni-refiner/UPSTREAM-README.md`; the adapted skill includes updated examples and reference files. The upstream README identifies the skill as MIT licensed.
+The Airtable Omni Custom Interface Refiner is adapted from
+[Noam Say / Airmakers' airtable-omni-refiner](https://github.com/noamsay/airtable-omni-refiner).
+Its original README is preserved as `skills/airtable-omni-refiner/UPSTREAM-README.md`; the adapted
+skill includes updated examples and reference files. The upstream README identifies the skill as
+MIT licensed.
 
-Workflow Scout, Base Check, Momentum Studio, Capacity Studio, Experience Lab, the Omni Prompt Generator, Questwood prompt, refined Questwood source, and webinar notes are shared here by Rachael Quisel. The upstream skill's license statement applies to that skill; it is not a repository-wide license declaration.
+Workflow Scout, Momentum Studio, Capacity Studio, Experience Lab, Base Check, Voice Align, the Omni
+Prompt Generator, the Family Neighborhood source, the demo prompts, and the webinar notes are
+shared here by Rachael Quisel. The upstream skill's license statement applies to that skill; it is
+not a repository-wide license declaration.
+
+## Earlier version
+
+An earlier cut of this repository held the Questwood demo (a gamified task dashboard with XP,
+levels, a leaderboard, and garden rewards), its original Omni prompt, the 15-step speaker outline,
+and six Loom recordings. Those were replaced by the Family Neighborhood demo above and remain in
+this repository's git history.

@@ -12,4 +12,4 @@ The [examples](examples/README.md) are educational fixtures, not a claim about e
 
 Adapted from [Noam Say / Airmakers](https://github.com/noamsay/airtable-omni-refiner). The original README attributed the skill to Noam Say and described it as MIT licensed. Local revisions reconcile SDK compatibility and the consulting/manual-demo workflow; no upstream publication is implied.
 
-The [archived upstream README](UPSTREAM-README.md) preserves the original authorship and license statement. Historical local work plans are not included in this package.
+`REFINEMENT-PLAN.md` records an earlier local pass and is historical, not the current API contract.
