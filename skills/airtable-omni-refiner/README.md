@@ -10,6 +10,6 @@ The [examples](examples/README.md) are educational fixtures, not a claim about e
 
 ## Attribution
 
-Adapted from [Noam Say / Airmakers](https://github.com/noamsay/airtable-omni-refiner). The original README attributed the skill to Noam Say and described it as MIT licensed. Local revisions reconcile SDK compatibility and the consulting/manual-demo workflow; no upstream publication is implied.
+Adapted from [Noam Say / Airmakers](https://github.com/noamsay/airtable-omni-refiner). The original README attributed the skill to Noam Say and described it as MIT licensed. Local revisions reconcile SDK compatibility and the consulting/manual-demo workflow; no upstream publication is implied. See the [third-party notice](../../THIRD_PARTY_NOTICES.md) for the license scope and preserved attribution.
 
 `REFINEMENT-PLAN.md` records an earlier local pass and is historical, not the current API contract.

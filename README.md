@@ -82,7 +82,13 @@ The [recording](videos/README.md) shows a rendered V3 screen. This repository ha
 verified a published V3 interface, persistent task writes, or reproducibility in another base.
 Treat the source as a documented demo snapshot and check those behaviors in your own setup.
 
-## Credits
+## License and credits
+
+Rachael Quisel's original source, prompts, skills, examples, written materials, and original
+portions of the recording are available under the [MIT license](LICENSE). Reuse requires keeping
+the copyright and permission notice. The license grants only rights Rachael holds; it does not
+cover third-party product interfaces, names, marks, or other third-party material shown in the
+recording. See [third-party notices](THIRD_PARTY_NOTICES.md) for the adapted skill and recording.
 
 The Airtable Omni Custom Interface Refiner is adapted from
 [Noam Say / Airmakers' airtable-omni-refiner](https://github.com/noamsay/airtable-omni-refiner).
@@ -92,8 +98,8 @@ MIT licensed.
 
 Workflow Scout, Momentum Studio, Capacity Studio, Experience Lab, Base Check, Voice Align, the Omni
 Prompt Generator, the Family Neighborhood source, the demo prompts, and the webinar notes are
-shared here by Rachael Quisel. The upstream skill's license statement applies to that skill; it is
-not a repository-wide license declaration.
+shared here by Rachael Quisel under MIT. The root copyright notice covers her contributions, not
+the upstream author's original work.
 
 ## Earlier version
 
