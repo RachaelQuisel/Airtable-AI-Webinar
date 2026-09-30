@@ -7,6 +7,9 @@ and follow it through four versions of the same interface. A native Airtable pag
 first React custom element, then two passes where Claude edits that React source. The focus is
 building fun into the product and shipping something you've put your own creative stamp on.
 
+**Start with the [four-version case study](docs/family-neighborhood-case-study.md)** for the
+design decisions, screenshots from the recording, and an account of what was checked.
+
 ## Consulting playbook: six skills
 
 The [consulting skill index](skills/README.md) explains the sequence and how to use the complete folders.
@@ -34,8 +37,10 @@ same assistant, not independent agents. Every prompt and source handoff is perfo
 
 | Resource | What it is |
 | --- | --- |
-| [Family Neighborhood V3 source](family-neighborhood/family-neighborhood-v3.tsx) | The shipped React custom interface: one house per family, a car on the road, tasks, documents, training progress, badges, and a "How this works" guide. |
-| [Family Neighborhood setup notes](family-neighborhood/README.md) | Which tables to connect and the 48 demo field IDs you have to remap first. Read this before reusing the source. |
+| [Family Neighborhood V3 source](family-neighborhood/family-neighborhood-v3.tsx) | The V3 source snapshot: one house per family, a car on the road, tasks, documents, training progress, badges, and a "How this works" guide. |
+| [Family Neighborhood setup notes](family-neighborhood/README.md) | Runtime and data-connection instructions. Read this before reusing the source. |
+| [Field map](family-neighborhood/field-map.md) | All 48 demo field IDs grouped by table, with the source variable that uses each one. |
+| [Illustrative fixture](family-neighborhood/example-fixture.md) | A fictional, small record set showing the relationships the interface expects. |
 | [The five demo prompts](prompts/family-neighborhood-demo-prompts.md) | Every prompt behind the four versions, in order, copy-ready. |
 | [Recording script](docs/recording-script.md) | The full walkthrough with narration and the checks to run after each version. |
 | [Demo video](videos/README.md) | The recording of all four versions. |
@@ -55,8 +60,10 @@ you're not using Codex. Loading a skill does not grant Airtable access; configur
 
 The prompts use the demo base ID and its field names, and the V3 source resolves 48 fields by
 literal demo field ID. Change that configuration for your own base before asking Omni to build or
-pasting the source into an element. `getFieldIfExists` returns `undefined` instead of throwing, so
-an unmapped base renders blank values rather than an obvious error.
+pasting the source into an element. Use the [field map](family-neighborhood/field-map.md) and
+[illustrative fixture](family-neighborhood/example-fixture.md) as a porting guide; neither is an
+importable Airtable base. `getFieldIfExists` returns `undefined` instead of throwing, so an
+unmapped base renders blank values rather than an obvious error.
 
 ## Build and review
 
@@ -70,6 +77,10 @@ SDK before applying code patterns from a skill. The bundled Interface Extension 
 `useRecords(table)` and configures its data through Airtable's Data panel; Base Extension examples
 may use a different signature. Generated prompts, local source edits, changes applied to Airtable,
 and verified results are different states.
+
+The [recording](videos/README.md) shows a rendered V3 screen. This repository has not independently
+verified a published V3 interface, persistent task writes, or reproducibility in another base.
+Treat the source as a documented demo snapshot and check those behaviors in your own setup.
 
 ## Credits
 

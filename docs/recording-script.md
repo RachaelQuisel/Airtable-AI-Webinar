@@ -121,4 +121,4 @@ Add a collapsible How this works guide. Explain the actual task-points rule, the
 
 **Say:** “We followed the same staff job through four versions. V0 gives us a useful task list. V1 makes families easier to explore, but its layout needs work. V2 fixes the layout and shows personal progress. V3 keeps those improvements, restores the playful hover, and explains the points, badges, and compliance work. The value is a clearer next step for staff and a better view of outstanding work for the organization.”
 
-**Presenter reference:** The shipped [V3 React source](../family-neighborhood/family-neighborhood-v3.tsx) in this repository is available for rehearsal. It is a code artifact until it is saved and checked in the V3 Airtable element. If you use that prepared file instead of code generated during the recording, say so plainly.
+**Presenter reference:** The [V3 React source snapshot](../family-neighborhood/family-neighborhood-v3.tsx) in this repository is available for rehearsal. It is a code artifact until it is saved and checked in the V3 Airtable element. If you use that prepared file instead of code generated during the recording, say so plainly.

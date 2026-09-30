@@ -42,14 +42,14 @@ element's Data panel.
 
 **This is the main porting cost.** The source resolves fields by literal Airtable field ID via
 `getFieldIfExists('fld…')`, not by name. It contains **48 distinct field IDs from the demo base**,
-distributed roughly as:
+distributed as follows:
 
 | Table | Field IDs referenced |
 | --- | --- |
-| Case tasks | 18 |
+| Case tasks | 12 |
 | Staff | 10 |
 | Applicants | 6 |
-| Families | 4 |
+| Families | 3 |
 | Documents | 4 |
 | Badges | 4 |
 | Requirements | 3 |
@@ -64,6 +64,10 @@ There are also two named constants to change:
 In another base every one of those IDs resolves to nothing. `getFieldIfExists` returns
 `undefined` rather than throwing, so the interface will render with blank or zero values
 instead of an obvious error. Expect to do the remapping deliberately and verify each panel.
+
+Use the [field map](field-map.md) for the complete source-to-field list and the
+[illustrative fixture](example-fixture.md) to understand the relationships. They are documentation,
+not an importable base or a substitute for checking field types in your own Airtable schema.
 
 ## Review the behavior
 
