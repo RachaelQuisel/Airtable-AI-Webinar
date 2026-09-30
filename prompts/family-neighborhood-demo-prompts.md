@@ -9,7 +9,7 @@ Swap the base ID, table names, and field names for your own before using any of 
 The demo base ID below is not yours.
 
 See the [recording script](../docs/recording-script.md) for the full walkthrough and the
-[shipped V3 source](../family-neighborhood/family-neighborhood-v3.tsx) for the end state.
+[V3 source snapshot](../family-neighborhood/family-neighborhood-v3.tsx) for the end state.
 
 ## Prompt 1 — Workflow Scout recommends interfaces
 
@@ -49,7 +49,7 @@ Use the airtable-omni-refiner skill to edit the V1 React source I attached for a
 
 ## Prompt 5 — Omni Refiner edits V2 into V3
 
-Attach the V2 source. Returns the final editor-ready React source shipped as family-neighborhood-v3.tsx.
+Attach the V2 source. Returns the editor-ready React source preserved as family-neighborhood-v3.tsx.
 
 ```text
 Use the airtable-omni-refiner skill to edit the attached V2 React source for a separate V3 copy. Return revised React code, not a new Omni prompt.
